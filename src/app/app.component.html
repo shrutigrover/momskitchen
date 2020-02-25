@@ -1,9 +1,9 @@
-<app-header></app-header>
+<app-header (featureSelected) = "onSelectFeature($event)"></app-header>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-about></app-about>
-            <app-recipe></app-recipe>
+            <app-about *ngIf = "featureSelected === 'about'"></app-about>
+            <app-recipe *ngIf = "featureSelected !== 'about'"></app-recipe>
         </div>
     </div>
 </div>
